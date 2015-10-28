@@ -1,0 +1,29 @@
+{
+  "name": "easyLogger",
+  "version": "0.1.0",
+  "description": "A node module that helps you to log customized output messages and save the outputs in files.",
+  "main": "index",
+  "dependencies": {
+    "colors": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index",
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AugustoL/easyLogger.git"
+  },
+  "keywords": [
+    "Logger",
+    "Messages",
+    "Output"
+  ],
+  "author": "Augusto Lemble <npm@augustolemble.com> (http://augustolemble.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AugustoL/easyLogger/issues"
+  },
+  "homepage": "https://github.com/AugustoL/easyLogger"
+}
