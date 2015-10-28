@@ -1,5 +1,5 @@
 {
-  "name": "easyLogger",
+  "name": "simple-logger",
   "version": "0.1.0",
   "description": "A node module that helps you to log customized output messages and save the outputs in files.",
   "main": "index",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AugustoL/easyLogger.git"
+    "url": "https://github.com/AugustoL/simple-logger.git"
   },
   "keywords": [
     "Logger",
@@ -23,7 +23,10 @@
   "author": "Augusto Lemble <npm@augustolemble.com> (http://augustolemble.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AugustoL/easyLogger/issues"
+    "url": "https://github.com/AugustoL/simple-logger/issues"
   },
-  "homepage": "https://github.com/AugustoL/easyLogger"
+  "homepage": "https://github.com/AugustoL/simple-logger",
+  "directories": {
+    "test": "test"
+  }
 }
