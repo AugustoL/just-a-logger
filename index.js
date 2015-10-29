@@ -14,11 +14,15 @@ module.exports = function(logLevel,logDirectory){
     if (logDirectory)
         folder = logDirectory;
 
-    stream = fs.createWriteStream(folder+'/'+fileName, { flags : 'w+' });
-    stream.write("<html>");
-    stream.write("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>");
-    stream.write("<link rel='stylesheet' href='ttps://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'>");
-    stream.write("<div class='container text-center'><h2 clas='text-center'>Log started on "+now.getDate()+'/'+now.getMonth()+'/'+now.getYear()+' on hour '+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds()+"</h2><br><div class='jumbotron text-left'>");
+    try {
+        fs.mkdirSync(folder);
+        openLog();
+    } catch(err) {
+        if (err.code == 'EEXIST') 
+            openLog();
+        else
+            throw err;
+    }
 
     module.log = function(message){
         if ((logLevel == 'normal')||(logLevel == 'debug'))
@@ -53,7 +57,14 @@ module.exports = function(logLevel,logDirectory){
     process.on('SIGINT', function () {
         module.close();
     });
-
+    
+    function openLog(){
+        stream = fs.createWriteStream(folder+'/'+fileName, { flags : 'w+' });
+        stream.write("<html>");
+        stream.write("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>");
+        stream.write("<link rel='stylesheet' href='ttps://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'>");
+        stream.write("<div class='container text-center'><h2 clas='text-center'>Log started on "+now.getDate()+'/'+now.getMonth()+'/'+now.getYear()+' on hour '+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds()+"</h2><br><div class='jumbotron text-left'>"); 
+    }
+    
     return module;
-
 }
