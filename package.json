@@ -1,6 +1,6 @@
 {
   "name": "just-a-logger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A node module that helps you to log customized output messages and save the outputs in files.",
   "main": "index",
   "dependencies": {
