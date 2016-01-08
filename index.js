@@ -1,11 +1,12 @@
 var colors = require('colors');
 var fs = require('fs');
 
-module.exports = function(logLevel,logDirectory){
-    
+module.exports = function(logLevel,logDirectory,logName){
+
     var module = {};
+    
     var now = new Date();
-    var fileName = now.getDate()+'-'+now.getMonth()+'-'+now.getYear()+';'+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds()+'.html';
+    var fileName = logName || now.getDate()+'-'+now.getMonth()+'-'+now.getYear()+';'+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds()+'.html';
     var folder = __dirname+'/logs';
     var stream = null;
 
@@ -56,6 +57,7 @@ module.exports = function(logLevel,logDirectory){
 
     process.on('SIGINT', function () {
         module.close();
+        process.exit();
     });
     
     function openLog(){

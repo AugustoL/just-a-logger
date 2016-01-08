@@ -1,6 +1,6 @@
 {
   "name": "just-a-logger",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "A node module that helps you to log customized output messages and save the outputs in files.",
   "main": "index",
   "dependencies": {
@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index",
-    "test": "echo 'Error: no test specified' && exit 1"
+    "test": "mocha test/test -u tdd --timeout 0"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   "author": "Augusto Lemble <npm@augustolemble.com> (http://augustolemble.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AugustoL/just-a-loggerr/issues"
+    "url": "https://github.com/AugustoL/just-a-logger/issues"
   },
   "homepage": "https://github.com/AugustoL/just-a-logger",
   "directories": {
